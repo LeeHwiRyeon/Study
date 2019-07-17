@@ -12,20 +12,32 @@ namespace UdpTestClient
     {
         static void Main(string[] args)
         {
-            var msg = "TestMsg";
-            var ip = "127.0.0.1";
-            var port = 7777;
+            IPHostEntry IPHost = Dns.GetHostByName(Dns.GetHostName());
+            Console.WriteLine("현재 PC AddressList");
+            foreach (var address in IPHost.AddressList) {
+                Console.WriteLine(address.ToString());
+            }
+
             using (var client = new UdpClient()) {
                 Start:
                 Console.WriteLine("IP 입력(Q 입력시 종료)");
-                ip = Console.ReadLine();
+                var ip = Console.ReadLine();
                 if (ip == "q" || ip == "Q") {
                     // 종료
                 } else {
                     try {
+                        PortInit:
+                        Console.WriteLine("서버 포트 입력");
+                        int.TryParse(Console.ReadLine(), out int port);
+                        if (port <= 0) {
+                            Console.WriteLine("잘 못 된 포트");
+                            Console.WriteLine("0 ~ 65535 범위 안에서 지정하세요.");
+                            goto PortInit;
+                        }
+
                         var point = new IPEndPoint(IPAddress.Parse(ip), port);
                         Console.WriteLine("메시지 입력");
-                        msg = Console.ReadLine();
+                        var msg = Console.ReadLine();
                         for (int i = 0; i < 5; i++) {
                             var datagram = Encoding.ASCII.GetBytes(msg + i);
                             client.Send(datagram, datagram.Length, point);

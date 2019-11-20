@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowFocusing
+namespace SelectWindow
 {
     internal class Program
     {
@@ -81,7 +81,7 @@ namespace WindowFocusing
 
         private static void GetWindows()
         {
-            EnumWindowCallback callback = new EnumWindowCallback(EnumWindowsProc);
+            var callback = new EnumWindowCallback(EnumWindowsProc);
             EnumWindows(callback, 0);
         }
 
@@ -90,7 +90,7 @@ namespace WindowFocusing
             var style = GetWindowLong(hWnd, GCL_HMODULE);
             if ((style & WS_VISIBLE) == WS_VISIBLE && (style & WS_CAPTION) == WS_CAPTION) {
                 if (GetParent(hWnd) == 0) {
-                    StringBuilder Buf = new StringBuilder(256);
+                    var Buf = new StringBuilder(256);
                     if (GetWindowText(hWnd, Buf, 256) > 0) {
                         m_titles.Add(Buf.ToString());
                     }

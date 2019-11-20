@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{42FBD746-FDB1-42C7-AD4B-AE98B27D2AA9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WindowFocusing</RootNamespace>
-    <AssemblyName>WindowFocusing</AssemblyName>
+    <RootNamespace>SelectWindow</RootNamespace>
+    <AssemblyName>SelectWindow</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

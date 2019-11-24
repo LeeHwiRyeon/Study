@@ -66,6 +66,7 @@ Temporary Items
 *.opensdf
 *.unsuccessfulbuild
 ipch/
+packages/
 
 .svn/
 .vs/

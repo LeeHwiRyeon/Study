@@ -14,7 +14,7 @@ namespace SelectWindow
         [DllImport("user32.dll", CharSet = CharSet.Unicode)] public static extern int GetWindowText(int hWnd, StringBuilder text, int count);
         [DllImport("user32.dll")] public static extern long GetWindowLong(int hWnd, int nIndex);
         [DllImport("user32.dll")] private static extern bool SetForegroundWindow(IntPtr hWnd);
-        [DllImport("user32.dll")] private static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
+        [DllImport("user32.dll")] private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
         [DllImport("user32.dll", CharSet = CharSet.Unicode)] private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
         [DllImport("user32.dll")] private static extern IntPtr GetForegroundWindow();
 
@@ -62,12 +62,14 @@ namespace SelectWindow
             }
 
             var task = Task.Run(() => {
-                var hWnd = FindWindow(null, m_names[index]);
-                ShowWindowAsync(hWnd, SW_SHOW);
-                SetForegroundWindow(hWnd);
                 do {
-                    var d = Task.Delay(10);
+                    var hWnd = FindWindow(null, m_names[index]);
+                    ShowWindow(hWnd, SW_SHOW);
+                    SetForegroundWindow(hWnd);
+
+                    var d = Task.Delay(100);
                     d.Wait();
+
                     var current = GetForegroundWindow();
                     if (hWnd.Equals(current)) {
                         break;

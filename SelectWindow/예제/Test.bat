@@ -1,5 +1,2 @@
 @echo off
-set FindWindowByNamePart="unity"
-set SelectWindowPath="SelectWindow.exe"
-%SelectWindowPath% %FindWindowByNamePart%
-::pause
+start SelectWindow.exe unity

@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectWindow", "SelectWindo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetFrameworkVersionManager", "DotNetFrameworkVersionManager\DotNetFrameworkVersionManager.csproj", "{7F1E753D-5011-46E0-AAE4-9AD906E6C200}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{C82192F7-6669-40D6-9A3C-8372828CE913}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCode", "SampleCode\SampleCode.csproj", "{975673DB-6B39-4207-A0A4-6ED96D0C861D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,10 @@ Global
 		{7F1E753D-5011-46E0-AAE4-9AD906E6C200}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F1E753D-5011-46E0-AAE4-9AD906E6C200}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F1E753D-5011-46E0-AAE4-9AD906E6C200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{975673DB-6B39-4207-A0A4-6ED96D0C861D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{975673DB-6B39-4207-A0A4-6ED96D0C861D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{975673DB-6B39-4207-A0A4-6ED96D0C861D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{975673DB-6B39-4207-A0A4-6ED96D0C861D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +38,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{42FBD746-FDB1-42C7-AD4B-AE98B27D2AA9} = {5EC6BA76-5691-4634-B975-D202DF69B2FF}
 		{7F1E753D-5011-46E0-AAE4-9AD906E6C200} = {5EC6BA76-5691-4634-B975-D202DF69B2FF}
+		{C82192F7-6669-40D6-9A3C-8372828CE913} = {5EC6BA76-5691-4634-B975-D202DF69B2FF}
+		{975673DB-6B39-4207-A0A4-6ED96D0C861D} = {C82192F7-6669-40D6-9A3C-8372828CE913}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EED9D75B-17F5-4A9B-AF0F-108009BF8E3B}

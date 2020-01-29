@@ -19,7 +19,7 @@ namespace SelectWindow
         [DllImport("user32.dll")] private static extern IntPtr GetForegroundWindow();
 
         // #include <winuser.h> 참조
-        private const int SW_SHOWNORMAL = 1;
+        private const int SW_MAXIMIZE = 3;
         private const long WS_VISIBLE = 0x10000000L;
         private const long WS_CAPTION = 0x00C00000L;
         private const int GCL_HMODULE = -16;
@@ -64,7 +64,7 @@ namespace SelectWindow
             var task = Task.Run(() => {
                 do {
                     var hWnd = FindWindow(null, m_names[index]);
-                    ShowWindow(hWnd, SW_SHOWNORMAL);
+                    ShowWindow(hWnd, SW_MAXIMIZE);
                     SetForegroundWindow(hWnd);
 
                     var d = Task.Delay(100);
